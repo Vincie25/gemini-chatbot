@@ -1,9 +1,9 @@
 import argparse
 import os
-from prompts import system_prompt
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+from prompts import system_prompt
 
 
 def main() ->None:
