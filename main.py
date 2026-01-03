@@ -1,5 +1,6 @@
 import argparse
 import os
+from prompts import system_prompt
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
@@ -19,7 +20,8 @@ def main() ->None:
     args = parser.parse_args()
     messages = [types.Content(role="user", parts=[types.Part(text=args.user_prompt)])]
     response = client.models.generate_content(
-            model='gemini-2.5-flash', contents=messages
+            model='gemini-2.5-flash', contents=messages,
+            config=types.GenerateContentConfig(system_instruction=system_prompt),
             )
     if response.usage_metadata is None:
         raise RuntimeError("failed API request")
