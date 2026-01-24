@@ -23,7 +23,7 @@ def main() ->None:
         print(f"User prompt: {args.user_prompt}")
     for _ in range(20):
         response = client.models.generate_content(
-            model='gemini-3-flash', contents=messages,
+            model='gemini-2.5-flash', contents=messages,
             config=types.GenerateContentConfig(tools=[available_functions],
                                                system_instruction=system_prompt)
             )
