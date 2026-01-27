@@ -1,0 +1,1 @@
+A Python-based command-line agent powered by Google Gemini AI, featuring function calling capabilities for file operations and code execution.
